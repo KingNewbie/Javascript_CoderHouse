@@ -45,10 +45,11 @@ function checkGuess(userNumber, secretNumber) {
         return true;
     }
 }
-
-Función startGame()
-
+```
+### Función startGame()
+```
 Esta función inicia el juego. Genera un nuevo número secreto y utiliza un bucle while para continuar solicitando al usuario que adivine el número hasta que lo adivine correctamente.
+```
 
 let secretNumber;
 let guessed;
@@ -68,11 +69,11 @@ function startGame() {
         guessed = checkGuess(userNumber, secretNumber);
     }
 }
-
+```
 Ciclo while
 
 El ciclo while dentro de startGame() es fundamental para el funcionamiento del juego. Permite que el juego continúe solicitando al usuario nuevas conjeturas hasta que se adivine correctamente el número secreto.
-
+```
 while (!guessed) {
     const userNumber = parseInt(prompt("Adivina el número entre 1 y 100:"));
 
@@ -83,12 +84,12 @@ while (!guessed) {
     guessed = checkGuess(userNumber, secretNumber);
 }
 
-Cómo Jugar
+### Cómo Jugar
 
-    Abre el archivo HTML en tu navegador web.
-    Haz clic en el botón "Iniciar Juego".
-    Introduce un número entre 1 y 100 cuando se te pida.
-    Sigue las pistas proporcionadas hasta adivinar el número secreto.
+   - Abre el archivo HTML en tu navegador web.
+   - Haz clic en el botón "Iniciar Juego".
+   - Introduce un número entre 1 y 100 cuando se te pida.
+   - Sigue las pistas proporcionadas hasta adivinar el número secreto.
 
 
 Conclusión
