@@ -4,7 +4,10 @@ Este proyecto es un sencillo juego de adivinanza de números desarrollado en HTM
 
 ## Estructura del Proyecto
 
-El proyecto consiste en un único archivo HTML que contiene tanto la estructura de la página como el código JavaScript necesario para ejecutar el juego.
+El proyecto consiste en dos archivos:
+
+1. `index.html`: Contiene la estructura de la página.
+2. `app.js`: Contiene la lógica del juego en JavaScript.
 
 ## Descripción del Código
 
@@ -15,6 +18,24 @@ La estructura HTML incluye lo siguiente:
 - Un título para la página (`<title>Juego de Adivinanza</title>`).
 - Un encabezado principal (`<h1>Juego de Adivinanza</h1>`).
 - Un botón para iniciar el juego (`<button onclick="startGame()">Iniciar Juego</button>`).
+
+#### `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinanza</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Juego de Adivinanza</h1>
+    <button onclick="startGame()">Iniciar Juego</button>
+</body>
+</html>
+```
 
 ### JavaScript
 
