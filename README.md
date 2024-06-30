@@ -92,6 +92,6 @@ while (!guessed) {
    - Sigue las pistas proporcionadas hasta adivinar el número secreto.
 
 
-Conclusión
+### Conclusión
 
 Este sencillo juego de adivinanza demuestra el uso de funciones y ciclos en JavaScript para crear una experiencia interactiva para el usuario. Es una excelente manera de practicar la lógica de programación y la interacción con el usuario mediante alertas y prompts. Además, este proyecto cumple con los requisitos de la primera entrega del curso de JavaScript en Coderhouse.
