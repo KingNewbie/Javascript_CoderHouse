@@ -159,10 +159,10 @@ mainMenu();
 
 ## Cómo Usar
 
-    Abre el archivo index.html en tu navegador web.
-    La aplicación comenzará automáticamente y mostrará un menú de opciones.
-    Introduce el número correspondiente a la opción que deseas realizar y sigue las instrucciones proporcionadas.
-    Para salir de la aplicación, selecciona la opción 7. Exit.
+Abre el archivo index.html en tu navegador web.
+La aplicación comenzará automáticamente y mostrará un menú de opciones.
+Introduce el número correspondiente a la opción que deseas realizar y sigue las instrucciones proporcionadas.
+Para salir de la aplicación, selecciona la opción 7. Exit.
 
 ## Conclusión
 
