@@ -15,24 +15,22 @@ El proyecto consiste en dos archivos:
 
 La estructura HTML incluye lo siguiente:
 
-- Un título para la página (`<title>Juego de Adivinanza</title>`).
-- Un encabezado principal (`<h1>Juego de Adivinanza</h1>`).
-- Un botón para iniciar el juego (`<button onclick="startGame()">Iniciar Juego</button>`).
+- Un título para la página (<title>Pizza Toppings Manager</title>).
+- La inclusión de los archivos de JavaScript (app.js y main.js).
 
 #### `index.html`
 
 ```html
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Adivinanza</title>
-    <script src="app.js" defer></script>
+    <title>Pizza Toppings Manager</title>
 </head>
 <body>
-    <h1>Juego de Adivinanza</h1>
-    <button onclick="startGame()">Iniciar Juego</button>
+    <script src="app.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
 ```
