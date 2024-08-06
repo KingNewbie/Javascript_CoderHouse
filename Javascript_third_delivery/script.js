@@ -1,4 +1,4 @@
-// Lista de ingredientes disponibles
+
 const ingredients = [
     { name: 'Queso', price: 1000, img: 'img/queso.png' },
     { name: 'Tomate', price: 500, img: 'img/tomate.png' },
@@ -13,16 +13,15 @@ const ingredients = [
     { name: 'Tocino', price: 900, img: 'img/tocino.png' }
 ];
 
-// Array para almacenar los elementos del carrito
+
 let cart = [];
 
-// Función para mostrar las tarjetas de ingredientes en la página principal
 function displayIngredientCards() {
     const container = document.getElementById('ingredientCards');
-    container.innerHTML = ''; // Limpiar contenido previo
-    console.log("Total de ingredientes:", ingredients.length); // Mostrar la cantidad total de ingredientes
+    container.innerHTML = ''; // Limpiar 
+    console.log("Total de ingredientes:", ingredients.length); 
     ingredients.forEach((ingredient, index) => {
-        console.log(`Mostrando ingrediente: ${ingredient.name}`); // Debug
+        console.log(`Mostrando ingrediente: ${ingredient.name}`); 
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
@@ -36,12 +35,11 @@ function displayIngredientCards() {
 }
 
 
-// Cargar el carrito desde localStorage al cargar la página
 function loadCartFromLocalStorage() {
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
         cart = JSON.parse(storedCart);
-        console.log('Carrito cargado:', cart); // Verificar el contenido del carrito
+        console.log('Carrito cargado:', cart); 
     } else {
         cart = [];
         console.log('No hay carrito guardado en localStorage.');
@@ -52,13 +50,12 @@ function loadCartFromLocalStorage() {
     }
 }
 
-// Guardar el carrito en localStorage
 function saveCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
-    console.log('Carrito guardado:', cart); // Verificar lo que se guarda
+    console.log('Carrito guardado:', cart); 
 }
 
-// Función para añadir un ingrediente al carrito
+
 function addToCart(index) {
     const ingredient = ingredients[index];
     cart.push(ingredient);
@@ -67,7 +64,7 @@ function addToCart(index) {
     alert(`${ingredient.name} añadido al carrito`);
 }
 
-// Función para actualizar el conteo de elementos en el carrito
+
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
     if (cartCount) {
@@ -75,17 +72,16 @@ function updateCartCount() {
     }
 }
 
-// Mostrar los elementos del carrito en la página del carrito
 function displayCartItems() {
     const cartItems = document.getElementById('cartItems');
     const pizzaImage = document.getElementById('pizzaImage');
-    cartItems.innerHTML = ''; // Limpiar contenido previo
+    cartItems.innerHTML = ''; 
 
     if (cart.length === 0) {
         cartItems.innerHTML = '<li>El carrito está vacío</li>';
-        if (pizzaImage) pizzaImage.style.display = 'none'; // Ocultar imagen de pizza si está definida
+        if (pizzaImage) pizzaImage.style.display = 'none'; 
     } else {
-        if (pizzaImage) pizzaImage.style.display = 'block'; // Mostrar imagen de pizza si está definida
+        if (pizzaImage) pizzaImage.style.display = 'block'; 
         cart.forEach((item, index) => {
             const li = document.createElement('li');
             li.textContent = `${item.name} - $${item.price}`;
@@ -99,7 +95,6 @@ function displayCartItems() {
     }
 }
 
-// Función para eliminar un elemento del carrito
 function removeFromCart(index) {
     cart.splice(index, 1);
     saveCartToLocalStorage();
@@ -107,17 +102,16 @@ function removeFromCart(index) {
     updateCartCount();
 }
 
-// Función para regresar a la página principal
+
 function goBack() {
     window.history.back();
 }
 
-// Función para navegar al carrito
 function navigateToCart() {
     window.location.href = 'cart.html';
 }
 
-// Cargar el carrito y los ingredientes al cargar la página
+
 window.onload = () => {
     loadCartFromLocalStorage();
     displayIngredientCards();

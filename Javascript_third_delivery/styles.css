@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -62,7 +62,7 @@ body {
     padding: 0 20px;
 }
 
-/* Estilos específicos para ingredient-container */
+
 .ingredient-container {
     display: flex;
     flex-wrap: wrap;
@@ -73,7 +73,7 @@ body {
 .card {
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: calc(25% - 20px); /* Ajuste para cuatro columnas */
+    width: calc(25% - 20px); 
     margin: 10px;
     padding: 10px;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
@@ -124,7 +124,7 @@ h1 {
     color: #333;
 }
 
-/* Estilos específicos para cart.html */
+
 .container.cart-container {
     background-color: white;
     padding: 20px;
@@ -171,7 +171,7 @@ ul.cart-items .remove-btn:hover {
 .pizza-image {
     max-width: 100%;
     height: auto;
-    display: none; /* Inicialmente oculta */
+    display: none; 
 }
 
 .back-button {
@@ -189,22 +189,22 @@ ul.cart-items .remove-btn:hover {
     background-color: #ccc;
 }
 
-/* Estilos responsivos */
+
 @media (max-width: 992px) {
     .card {
-        width: calc(33.333% - 20px); /* Tres columnas */
+        width: calc(33.333% - 20px); 
     }
 }
 
 @media (max-width: 768px) {
     .card {
-        width: calc(50% - 20px); /* Dos columnas */
+        width: calc(50% - 20px); 
     }
 }
 
 @media (max-width: 576px) {
     .card {
-        width: 100%; /* Una columna */
+        width: 100%; 
         margin: 10px 0;
     }
 }
