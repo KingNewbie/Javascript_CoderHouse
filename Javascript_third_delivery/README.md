@@ -11,33 +11,29 @@ Este proyecto es una sencilla aplicación para personalizar pizzas desarrollada 
 
 El proyecto consta de los siguientes archivos:
 
-    1. index.html: Contiene la estructura de la página principal donde se seleccionan los ingredientes.
-    2. cart.html: Página donde se muestra el resumen de los ingredientes seleccionados.
-    3. styles.css: Contiene los estilos para la presentación de la aplicación.
-    4. script.js: Contiene la lógica para manejar los ingredientes y el carrito en JavaScript.
+    1.  index.html: Contiene la estructura de la página principal donde se seleccionan los ingredientes.
+    2.  cart.html: Página donde se muestra el resumen de los ingredientes seleccionados.
+    3.  styles.css: Contiene los estilos para la presentación de la aplicación.
+    4.  script.js: Contiene la lógica para manejar los ingredientes y el carrito en JavaScript.
 
-Instalación
+## Instalación
 
     1.- Clona el repositorio:
 
-    git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+    git clone https://github.com/KingNewbie/Javascript_CoderHouse/tree/main/Javascript_third_delivery
 
     2.- Navega al directorio del proyecto:
 
-    cd nombre-del-repositorio
-Uso
+    3.- cd Javascript_third_delivery
+
+## Uso
 
     Abre index.html en tu navegador web favorito para iniciar la aplicación.
     Selecciona los ingredientes que deseas añadir a tu pizza y haz clic en "Agregar al carrito".
     Haz clic en el icono del carrito para ver los ingredientes seleccionados y gestionar tu pedido.
 
-Archivos Importantes
-index.html
+## Descripción del Código
 
-Página principal con la lista de ingredientes disponibles.
-cart.html
-
-Página del carrito donde se muestran los ingredientes seleccionados.
 ### HTML
 
 La estructura HTML incluye los siguientes elementos:
@@ -69,7 +65,7 @@ La estructura HTML incluye los siguientes elementos:
     </div>
     <h1>Elige tus Ingredientes</h1>
     <div class="container ingredient-container" id="ingredientCards">
-        <!-- Las tarjetas de ingredientes se generarán aquí -->
+        
     </div>
 
     <script src="script.js"></script>
@@ -84,7 +80,6 @@ El archivo styles.css define la apariencia de la aplicación, incluyendo estilos
 
 ## styles.css
 ```css
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -416,3 +411,13 @@ window.onload = () => {
 };
 
 ```
+
+## Cómo Usar
+
+    Abre el archivo index.html en tu navegador web.
+    Selecciona los ingredientes que deseas añadir a tu pizza y haz clic en "Agregar al carrito".
+    Haz clic en el icono del carrito para ver los ingredientes seleccionados y gestionar tu pedido.
+
+## Conclusión
+
+Esta aplicación sencilla de personalización de pizzas permite practicar la lógica de programación con JavaScript, así como el uso de funciones, manejo del DOM y almacenamiento en localStorage. Es una excelente manera de experimentar con la creación de una experiencia de usuario interactiva.
