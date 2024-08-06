@@ -1,4 +1,4 @@
-# Pizza Toppings Manager
+# Pizza Customizer
 
 Este proyecto es una sencilla aplicación para gestionar toppings de pizza desarrollada en HTML y JavaScript. El objetivo de la aplicación es permitir al usuario agregar, eliminar, mostrar, ordenar, invertir y limpiar una lista de toppings de pizza. Este proyecto tiene como finalidad cumplir con los requisitos de la segunda entrega del proyecto de JavaScript del curso de Coderhouse.
 
