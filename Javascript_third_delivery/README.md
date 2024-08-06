@@ -290,6 +290,8 @@ ul.cart-items .remove-btn:hover {
     }
 }
 ```
+### Javascript
+
 ## script.js
 ```javascript
 const ingredients = [
