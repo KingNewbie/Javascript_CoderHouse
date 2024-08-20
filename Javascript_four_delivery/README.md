@@ -1,3 +1,5 @@
+# Pizza Toppings Manager 🍕
+
 ![Pizza Toppings Manager](img/pizza_toppings_banner.png)
 
 ## Estructura del Proyecto
@@ -21,12 +23,12 @@ El proyecto consta de los siguientes archivos y carpetas:
 2. **Navega al directorio del proyecto:**
 
     ```bash
-    cd Javascript_third_delivery
+    cd Javascript_four_delivery
     ```
 
 3. **Inicia un servidor local (opcional pero recomendado):**
 
-    Si estás desarrollando localmente, es recomendable iniciar un servidor local para evitar problemas de CORS con `fetch`.
+    Fue necesario iniciar un servidor local para evitar problemas de CORS con `fetch` por tanto al indagar consegui iniciar uno de la siguiente dos maneras:
 
     - **Usando Python:**
     
