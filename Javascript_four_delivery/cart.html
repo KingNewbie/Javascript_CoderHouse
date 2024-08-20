@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Carrito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <div class="navbar-links">
+         
+        </div>
+        <div class="navbar-cart">
+            <img src="img/cart-icon.png" alt="Carrito">
+            <div class="cart-count" id="cartCount">0</div>
+        </div>
+    </div>
+    <div class="container cart-container">
+        <h1>Tu Pizza</h1>
+        <ul id="cartItems" class="cart-items"></ul>
+        <div class="pizza-image-container">
+            <img src="img/pizza.png" alt="Pizza" id="pizzaImage" class="pizza-image">
+        </div>
+        <button onclick="goBack()" class="back-button">Volver</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
