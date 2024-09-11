@@ -15,6 +15,8 @@ El proyecto consta de los siguientes archivos:
     2.  cart.html: Página donde se muestra el resumen de los ingredientes seleccionados.
     3.  styles.css: Contiene los estilos para la presentación de la aplicación.
     4.  script.js: Contiene la lógica para manejar los ingredientes y el carrito en JavaScript.
+    5. ingredients.js: Contiene la lógica para manejar los ingredientes
+    6.- cart.js: Contiene la lógica para manejar los lo que esta en el carrito.
 
 ## Instalación
 
@@ -294,6 +296,7 @@ ul.cart-items .remove-btn:hover {
 
 ## script.js
 ```javascript
+
 const ingredients = [
     { name: 'Queso', price: 1000, img: 'img/queso.png' },
     { name: 'Tomate', price: 500, img: 'img/tomate.png' },
@@ -311,12 +314,12 @@ const ingredients = [
 
 let cart = [];
 
-
 function displayIngredientCards() {
     const container = document.getElementById('ingredientCards');
-    container.innerHTML = ''; 
+    container.innerHTML = ''; // Limpiar 
     console.log("Total de ingredientes:", ingredients.length); 
     ingredients.forEach((ingredient, index) => {
+        console.log(`Mostrando ingrediente: ${ingredient.name}`); 
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
@@ -328,7 +331,6 @@ function displayIngredientCards() {
         container.appendChild(card);
     });
 }
-
 
 
 function loadCartFromLocalStorage() {
@@ -346,7 +348,6 @@ function loadCartFromLocalStorage() {
     }
 }
 
-// localStorage
 function saveCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log('Carrito guardado:', cart); 
@@ -360,6 +361,7 @@ function addToCart(index) {
     updateCartCount();
     alert(`${ingredient.name} añadido al carrito`);
 }
+
 
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
@@ -375,7 +377,7 @@ function displayCartItems() {
 
     if (cart.length === 0) {
         cartItems.innerHTML = '<li>El carrito está vacío</li>';
-        if (pizzaImage) pizzaImage.style.display = 'none';
+        if (pizzaImage) pizzaImage.style.display = 'none'; 
     } else {
         if (pizzaImage) pizzaImage.style.display = 'block'; 
         cart.forEach((item, index) => {
@@ -391,13 +393,13 @@ function displayCartItems() {
     }
 }
 
-
 function removeFromCart(index) {
     cart.splice(index, 1);
     saveCartToLocalStorage();
     displayCartItems();
     updateCartCount();
 }
+
 
 function goBack() {
     window.history.back();
@@ -407,13 +409,179 @@ function navigateToCart() {
     window.location.href = 'cart.html';
 }
 
+
 window.onload = () => {
     loadCartFromLocalStorage();
     displayIngredientCards();
 };
 
+
 ```
 
+## cart.js
+```javascript
+let cart = [];
+
+function loadCartFromLocalStorage() {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+        cart = JSON.parse(storedCart);
+    }
+    updateCartCount();
+    displayCartItems();
+}
+
+function saveCartToLocalStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function displayCartItems() {
+    const cartItems = document.getElementById('cartItems');
+    const pizzaImage = document.getElementById('pizzaImage');
+    cartItems.innerHTML = '';
+
+    const cartSummary = cart.reduce((summary, item) => {
+        const existingItem = summary.find(i => i.name === item.name);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            summary.push({ ...item, quantity: 1 });
+        }
+        return summary;
+    }, []);
+
+    if (cartSummary.length === 0) {
+        cartItems.innerHTML = '<li>El carrito está vacío</li>';
+        if (pizzaImage) pizzaImage.style.display = 'none';
+    } else {
+        if (pizzaImage) pizzaImage.style.display = 'block';
+        cartSummary.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Eliminar';
+            removeButton.className = 'remove-btn';
+            removeButton.onclick = () => removeFromCart(item.name);
+            li.appendChild(removeButton);
+            cartItems.appendChild(li);
+        });
+    }
+}
+
+function removeFromCart(itemName) {
+    const itemIndex = cart.findIndex(item => item.name === itemName);
+    if (itemIndex !== -1) {
+        cart.splice(itemIndex, 1); 
+        saveCartToLocalStorage();
+        displayCartItems();
+        updateCartCount();
+    }
+}
+
+function updateCartCount() {
+    const cartCount = document.getElementById('cartCount');
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+}
+
+function goBack() {
+    window.history.back();
+}
+
+function finalizePurchase() {
+    Swal.fire({
+        title: 'Compra finalizada',
+        text: 'Gracias por tu compra!',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    });
+    cart = []; 
+    saveCartToLocalStorage();
+    displayCartItems(); 
+    updateCartCount(); 
+}
+
+window.onload = () => {
+    loadCartFromLocalStorage();
+};
+
+```
+## ingredients.js
+```javascript
+let ingredients = [];
+
+async function loadIngredients() {
+    try {
+        const response = await fetch('ingredients.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        ingredients = await response.json();
+        displayIngredientCards();
+    } catch (error) {
+        console.error('Error cargando ingredientes:', error);
+    }
+}
+
+function displayIngredientCards() {
+    const container = document.getElementById('ingredientCards');
+    container.innerHTML = '';
+    ingredients.forEach((ingredient, index) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <img src="${ingredient.img}" alt="${ingredient.name}" onerror="this.onerror=null;this.src='img/default.png';">
+            <h3>${ingredient.name}</h3>
+            <p>$${ingredient.price}</p>
+            <button onclick="addToCart(${index})">Agregar al carrito</button>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function sortIngredients() {
+    const option = document.getElementById('sortOptions').value;
+    if (option === 'price') {
+        ingredients.sort((a, b) => a.price - b.price);
+    } else if (option === 'name') {
+        ingredients.sort((a, b) => a.name.localeCompare(b.name));
+    }
+    displayIngredientCards();
+}
+
+function addToCart(index) {
+    const ingredient = ingredients[index];
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(ingredient);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    Swal.fire({
+        title: '¡Añadido!',
+        text: `${ingredient.name} ha sido añadido al carrito`,
+        icon: 'success',
+        confirmButtonText: 'Continuar'
+    });
+    updateCartCount();
+}
+
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = document.getElementById('cartCount');
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+}
+
+function navigateToCart() {
+    window.location.href = 'cart.html';
+}
+
+window.onload = () => {
+    loadIngredients(); 
+    updateCartCount(); 
+};
+
+```
 ## Cómo Usar
 
     Abre el archivo index.html en tu navegador web.

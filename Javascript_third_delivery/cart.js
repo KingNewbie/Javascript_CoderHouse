@@ -18,7 +18,6 @@ function displayCartItems() {
     const pizzaImage = document.getElementById('pizzaImage');
     cartItems.innerHTML = '';
 
-    // Crear resumen del carrito basado en la cantidad de cada ingrediente
     const cartSummary = cart.reduce((summary, item) => {
         const existingItem = summary.find(i => i.name === item.name);
         if (existingItem) {
@@ -29,7 +28,6 @@ function displayCartItems() {
         return summary;
     }, []);
 
-    // Si el carrito está vacío
     if (cartSummary.length === 0) {
         cartItems.innerHTML = '<li>El carrito está vacío</li>';
         if (pizzaImage) pizzaImage.style.display = 'none';
@@ -49,10 +47,9 @@ function displayCartItems() {
 }
 
 function removeFromCart(itemName) {
-    // Reducir cantidad del item o eliminar del carrito
     const itemIndex = cart.findIndex(item => item.name === itemName);
     if (itemIndex !== -1) {
-        cart.splice(itemIndex, 1); // Eliminar uno de los ítems
+        cart.splice(itemIndex, 1); 
         saveCartToLocalStorage();
         displayCartItems();
         updateCartCount();
@@ -77,10 +74,10 @@ function finalizePurchase() {
         icon: 'success',
         confirmButtonText: 'Aceptar'
     });
-    cart = []; // Limpiar el carrito
-    saveCartToLocalStorage(); // Guardar carrito vacío en localStorage
-    displayCartItems(); // Refrescar la vista del carrito
-    updateCartCount(); // Actualizar el contador del carrito
+    cart = []; 
+    saveCartToLocalStorage();
+    displayCartItems(); 
+    updateCartCount(); 
 }
 
 window.onload = () => {

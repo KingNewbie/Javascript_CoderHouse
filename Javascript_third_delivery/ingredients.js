@@ -39,7 +39,6 @@ function sortIngredients() {
     displayIngredientCards();
 }
 
-// Función para agregar ingredientes al carrito
 function addToCart(index) {
     const ingredient = ingredients[index];
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -54,7 +53,6 @@ function addToCart(index) {
     updateCartCount();
 }
 
-// Función para actualizar la cantidad de elementos en el carrito
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartCount = document.getElementById('cartCount');
@@ -63,12 +61,11 @@ function updateCartCount() {
     }
 }
 
-// Función para navegar a la página del carrito
 function navigateToCart() {
     window.location.href = 'cart.html';
 }
 
 window.onload = () => {
-    loadIngredients(); // Cargar los ingredientes al inicio
-    updateCartCount(); // Actualizar el contador del carrito al cargar la página
+    loadIngredients(); 
+    updateCartCount(); 
 };
