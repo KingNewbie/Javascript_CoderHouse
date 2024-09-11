@@ -5,28 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del Carrito</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/favicon.ico">
+    <!-- Incluir SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="navbar">
         <div class="navbar-logo">
-            <img src="img/logo.png" alt="Logo">
+            <img src="img/cart-icon.png" alt="Logo">
         </div>
-        <div class="navbar-links">
-         
-        </div>
+        <div class="navbar-links"></div>
         <div class="navbar-cart">
             <img src="img/cart-icon.png" alt="Carrito">
             <div class="cart-count" id="cartCount">0</div>
         </div>
     </div>
+
     <div class="container cart-container">
         <h1>Tu Pizza</h1>
         <ul id="cartItems" class="cart-items"></ul>
         <div class="pizza-image-container">
             <img src="img/pizza.png" alt="Pizza" id="pizzaImage" class="pizza-image">
         </div>
+
         <button onclick="goBack()" class="back-button">Volver</button>
+        <button onclick="finalizePurchase()" class="finalize-btn">Finalizar Compra</button>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Tu archivo cart.js debe ir después -->
+    <script src="cart.js"></script>
 </body>
 </html>

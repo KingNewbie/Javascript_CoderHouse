@@ -1,0 +1,13 @@
+[
+    { "name": "Queso", "price": 1000, "img": "img/queso.png" },
+    { "name": "Tomate", "price": 500, "img": "img/tomate.png" },
+    { "name": "Pepperoni", "price": 1200, "img": "img/pepperoni.png" },
+    { "name": "Champiñones", "price": 800, "img": "img/champinones.png" },
+    { "name": "Aceitunas", "price": 700, "img": "img/aceitunas.png" },
+    { "name": "Jalapeños", "price": 600, "img": "img/jalapenos.png" }, 
+    { "name": "Pimiento", "price": 400, "img": "img/pimiento.png" },
+    { "name": "Cebolla", "price": 300, "img": "img/cebolla.png" },
+    { "name": "Jamon", "price": 950, "img": "img/jamon.png" },
+    { "name": "Piña", "price": 550, "img": "img/pina.png" },
+    { "name": "Tocino", "price": 900, "img": "img/tocino.png" }
+]
