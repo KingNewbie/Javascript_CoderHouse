@@ -20,14 +20,34 @@ El proyecto consta de los siguientes archivos:
 
 ## Instalación
 
-    1.- Clona el repositorio:
+1. **Clona el repositorio:**
 
     git clone https://github.com/KingNewbie/Javascript_CoderHouse/tree/main/Javascript_third_delivery
 
-    2.- Navega al directorio del proyecto:
+2. **Navega al directorio del proyecto:**
 
-    3.- cd Javascript_third_delivery
+    ```bash
+    cd Javascript_third_delivery
+    ```
+3. **Inicia un servidor local (opcional pero recomendado):**
 
+    Fue necesario iniciar un servidor local para evitar problemas de CORS con `fetch` por tanto al indagar consegui iniciar uno de la siguiente dos maneras:
+
+    - **Usando Python:**
+    
+      ```bash
+      python3 -m http.server
+      ```
+      
+    - **Usando Live Server en Visual Studio Code:**
+    
+      Instala la extensión Live Server y abre el proyecto con ella.
+
+4. **Abre `index.html` en tu navegador:**
+
+    ```bash
+    http://localhost:8000
+    ```
 ## Uso
 
     Abre index.html en tu navegador web favorito para iniciar la aplicación.
