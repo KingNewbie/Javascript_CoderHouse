@@ -613,4 +613,8 @@ window.onload = () => {
 
 Esta aplicación sencilla de personalización de pizzas permite practicar la lógica de programación con JavaScript, así como el uso de funciones, manejo del DOM y almacenamiento en localStorage. Es una excelente manera de experimentar con la creación de una experiencia de usuario interactiva.
 
-![Muestra de Consola](img/consola_index.png)
+## Muestras o PrintScreen sin errores de consola
+
+![Muestra de donsola en index](img/consola_index.png)
+
+![Muestra de consola en cart](img/consola_cart.png)
