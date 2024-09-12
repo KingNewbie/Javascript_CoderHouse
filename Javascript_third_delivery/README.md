@@ -1,4 +1,5 @@
 # Pizza Toppings Manager 🍕
+![Pizza Toppings Manager](img/pizza_toppings_banner.png)
 
 Este proyecto es una sencilla aplicación para personalizar pizzas desarrollada en HTML, CSS y JavaScript puro. El objetivo de la aplicación es permitir al usuario seleccionar ingredientes para crear su pizza personalizada, agregar los ingredientes al carrito, y ver el resumen de su pedido. Este proyecto es parte del curso de JavaScript en Coderhouse.
 
@@ -611,3 +612,5 @@ window.onload = () => {
 ## Conclusión
 
 Esta aplicación sencilla de personalización de pizzas permite practicar la lógica de programación con JavaScript, así como el uso de funciones, manejo del DOM y almacenamiento en localStorage. Es una excelente manera de experimentar con la creación de una experiencia de usuario interactiva.
+
+![Muestra de Consola](img/consola_index.png)
