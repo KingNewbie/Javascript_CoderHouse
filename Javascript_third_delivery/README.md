@@ -32,7 +32,7 @@ El proyecto consta de los siguientes archivos:
     ```
 3. **Inicia un servidor local (opcional pero recomendado):**
 
-    Fue necesario iniciar un servidor local para evitar problemas de CORS con `fetch` por tanto al indagar consegui iniciar uno de la siguiente dos maneras:
+    Fue necesario iniciar un servidor local para evitar problemas de actualizacion de codigo en el desarrollo, por tanto al indagar consegui iniciar uno de la siguiente dos maneras:
 
     - **Usando Python:**
     
